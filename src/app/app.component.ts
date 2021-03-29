@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'simplilearn';
+  title: string = 'Simplilearn';
+
+  count: number = 1;
+  
+  num: number = 1;
+
+  numClass: string = "color";
+
+  classToSet: string = "positive";
+
+  handleClick(value: number): void {
+    this.count += value;
+    this.classToSet = this.count > 0 ? 'positive' : 'negative';
+  }
 }

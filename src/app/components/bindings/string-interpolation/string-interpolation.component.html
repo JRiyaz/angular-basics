@@ -1,0 +1,19 @@
+<p>
+  Normal: <strong>{{ message }}</strong>
+</p>
+<p>
+  Property Binding:
+  <strong innerText="{{ message + ' Hello String' }}">
+    {{ message + " by property binding" }}
+  </strong>
+</p>
+
+<p>
+  This is:
+  <strong>{{ "String assigned on fly" }}</strong>
+</p>
+
+<p>
+  This is from function:
+  <strong innerText="{{ getMessage() }}">{{ "String assigned on fly" }}</strong>
+</p>

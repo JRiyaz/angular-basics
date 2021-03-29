@@ -1,0 +1,24 @@
+<p>
+  On Button click Method Call |
+  <button (click)="handleClick(button)" [innerText]="button"></button>
+</p>
+
+<p>
+  On Button click Method call |
+  <button
+    (click)="handleClick('Button is clicked')"
+    innerText="{{ button }}"
+  ></button>
+</p>
+
+<p>
+  On Button Click execute expression |
+  <button (click)="button = 'Button is clicked'">
+    Click to change the value of variable declared in component
+  </button>
+</p>
+
+<p>
+    Enter some value and press Enter
+    <input type="text" (keyup)="handleKeyUp($event)"/>
+</p>

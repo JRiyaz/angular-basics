@@ -1,0 +1,15 @@
+<p>Normal: <strong [innerText]="message"></strong></p>
+
+<p>Input field: <input type="text" [value]="message" /></p>
+
+<p>Value on the fly: <strong [innerText]="'value on fly'"></strong></p>
+
+<p>
+  Value on the fly and property:
+  <strong [innerText]="'value on fly ' + message"></strong>
+</p>
+
+<p>
+  Method call:
+  <strong [innerText]="getMessage()"></strong>
+</p>
