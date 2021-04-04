@@ -1,0 +1,21 @@
+<!-- Inline styles -->
+<h1 style="border: solid 1px dotted;">Class Binding</h1>
+
+<!-- NOTE: Attribute and Class Binding will override the existing css -->
+<!-- Attribute binding -->
+<p class="bold curly" [attr.class]="'red'">This is Attribute Binding</p>
+
+<!-- Property Binding -->
+<p class="bold curly" [class]="'highlight'">This is Property Binding</p>
+
+<!-- Class Binding NOTE: class binding syntax require a boolen condition, based on that it will apply or remove the class-->
+<p class="bold curly" [class.red]="true">This is Class Binding</p>
+
+
+<!-- Toggle the class with click of button -->
+<h1 class="red" [class.highlight]="highlightText">Highlight</h1>
+
+<button (click)="highlightText = !highlightText">Toggle class highlight</button>
+
+
+

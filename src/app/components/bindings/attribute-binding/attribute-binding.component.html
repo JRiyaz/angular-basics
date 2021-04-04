@@ -1,0 +1,29 @@
+<h1>Attribute Binding</h1>
+
+<table [border]="1">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <!-- Attribute binding for attribute 'colspan'-->
+            <th [attr.colspan]="names.length">Name</th>
+            <th>Mobile</th>
+            <!-- Property binding for actual attribute 'colspan'-->
+            <th [colSpan]="addresses.length">Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td *ngFor="let name of names">
+                {{name}}
+            </td>
+            <td>809953138</td>
+            <td *ngFor="let address of addresses">{{address}}</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>
+
+<button [attr.aria-label]="buttonAction">Aria Label</button>

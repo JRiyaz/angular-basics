@@ -13,7 +13,10 @@ export class TwoWayBindingComponent implements OnInit {
   @Output() handleChildEvent: EventEmitter<number> = new EventEmitter<number>();
 
   @Input() someNumber: number = 1;
+  
   @Output() someNumberChange: EventEmitter<number> = new EventEmitter<number>();
+
+  ng_model: any = "Two way binding";
 
 
   @Input() name: string;

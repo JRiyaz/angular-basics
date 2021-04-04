@@ -1,0 +1,27 @@
+<!-- Without Style binding -->
+<h1 style="padding: 2px; border: dashed 2px red">Style Binding</h1>
+
+<!-- With Style Binding -->
+<p [style.color]="'red'">With Style Biding</p>
+
+<!-- Multiple Style Biding -->
+<!-- Using camel case or normal binding -->
+<p [style.fontWeight]="'bold'" [style.background-color]="'lightblue'">
+  Multiple Style Biding
+</p>
+
+<!-- Font Size in different viewports -->
+
+<!-- In percentage -->
+<p [style.font-size.%]="'200'">Font Size in %</p>
+
+<!-- In pixels -->
+<p [style.fontSize.px]="'25'">Font Size in Px</p>
+
+<!-- In em -->
+<p [style.fontSize.em]="'2'">Font Size in EM</p>
+
+<!-- Toggle Style -->
+<button [style.color]="isValid ? 'green' : 'red'" (click)="isValid = !isValid">
+  Click to change color
+</button>

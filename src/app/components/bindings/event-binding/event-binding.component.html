@@ -22,3 +22,15 @@
     Enter some value and press Enter
     <input type="text" (keyup)="handleKeyUp($event)"/>
 </p>
+
+<p>
+  Get the value by click
+  <input type="text" #input_field [value]="button"/> | 
+  <button (click)="getValueOnClick(input_field.value)">click here</button>
+</p>
+
+<p>
+  Change the input type on click
+  <input type="text" #input_field2 [value]="button"/> | 
+  <button (click)="changeTypeOnClick(input_field2)">click here</button>
+</p>

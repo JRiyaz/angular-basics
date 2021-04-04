@@ -6,10 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title: string = 'Simplilearn';
 
   count: number = 1;
-  
+
   num: number = 1;
 
   numClass: string = "color";

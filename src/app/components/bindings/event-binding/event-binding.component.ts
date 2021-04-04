@@ -20,4 +20,14 @@ export class EventBindingComponent implements OnInit {
   handleKeyUp(event: any): void {
     event.code == 'Enter' && window.alert(event.target.value);
   }
+
+  getValueOnClick(value: string): void {
+    window.alert(value);
+  }
+
+  changeTypeOnClick(element: any): void {
+    let type = 'text';
+    type = element.getAttribute('type') == 'password' ? 'text' : 'password';
+    element.setAttribute('type', type);
+  }
 }
