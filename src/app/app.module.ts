@@ -11,6 +11,8 @@ import { AttributeBindingComponent } from './components/bindings/attribute-bindi
 import { FormsModule } from '@angular/forms';
 import { ClassBindingComponent } from './components/bindings/class-binding/class-binding.component';
 import { StyleBindingComponent } from './components/bindings/style-binding/style-binding.component';
+import { ProjectedContentComponent } from './components/content-and-child/projected-content/projected-content.component';
+import { ChildContentComponent } from './components/content-and-child/child-content/child-content.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { StyleBindingComponent } from './components/bindings/style-binding/style
     TwoWayBindingComponent,
     AttributeBindingComponent,
     ClassBindingComponent,
-    StyleBindingComponent
+    StyleBindingComponent,
+    ProjectedContentComponent,
+    ChildContentComponent
   ],
   imports: [
     BrowserModule,
