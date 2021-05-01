@@ -1,12 +1,13 @@
-<h1>{{ "From App Component '" + title + "'" }}</h1>
+<div class="container">
+  <h1>{{ "From App Component '" + title + "'" }}</h1>
 
-<!-- <app-string-interpolation></app-string-interpolation> -->
+  <!-- <app-string-interpolation></app-string-interpolation> -->
 
-<!-- <app-property-binding></app-property-binding> -->
+  <!-- <app-property-binding></app-property-binding> -->
 
-<!-- <app-event-binding></app-event-binding> -->
+  <!-- <app-event-binding></app-event-binding> -->
 
-<!-- <div>
+  <!-- <div>
   <h1>
     @Input & @Output | Count = <strong [class]="classToSet">{{ count }}</strong> | 
     <i [innerText]="num" [class]="numClass"></i>
@@ -19,14 +20,22 @@
   ></app-two-way-binding>
 </div> -->
 
-<!-- <app-attribute-binding></app-attribute-binding> -->
+  <!-- <app-attribute-binding></app-attribute-binding> -->
 
-<!-- <app-class-binding></app-class-binding> -->
+  <!-- <app-class-binding></app-class-binding> -->
 
-<!-- <app-style-binding></app-style-binding> -->
+  <!-- <app-style-binding></app-style-binding> -->
 
-<!-- <app-projected-content>
+  <!-- <app-projected-content>
   <app-child-content [title]="title"></app-child-content>
-  <app-child-content [title]="title"></app-child-content>
+  <app-child-content [title]="title"></app-child-conten̥t>
   <app-child-content [title]="title"></app-child-content>
 </app-projected-content> -->
+  <app-nav-bar [app]="title"></app-nav-bar>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-footer></app-footer>
+</div>
