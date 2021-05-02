@@ -1,5 +1,6 @@
 <div class="card">
-  <div class="card-body">
+  <h5 class="card-title" *ngIf="userDetails == undefined">Select an user</h5>
+  <div class="card-body" *ngIf="userDetails != undefined">
     <h5 class="card-title">{{ userDetails.name }}</h5>
     <table class="table">
       <tr>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Users } from 'src/app/interfaces/users/users';
+import { UsersService } from 'src/app/services/users/users.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  show: boolean = true;
+
+  text: string = 'hide';
+
+  alert: string;
+
+  users: Users[];
+
+  constructor(private userService: UsersService) { }
 
   ngOnInit(): void {
+    this.users = this.userService.getUsers();
+  }
 
+  handleButtonClick(): void {
+    this.show = !this.show;
+    if (this.show)
+      this.text = 'hide';
+    else
+      this.text = 'show';
   }
 
 }

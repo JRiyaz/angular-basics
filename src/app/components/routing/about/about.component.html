@@ -1,1 +1,100 @@
-<p>about works!</p>
+<h1 [class]="'my-3'">About Page - NG Class and NG Style</h1>
+
+<button [ngClass]="['btn', 'btn-primary', 'mb-3']" (click)="success = !success">
+  Toggle Alert Type
+</button>
+
+<div
+  class="alert"
+  role="alert"
+  [ngClass]="{
+    'mb-3': true,
+    'alert-success': success,
+    'alert-danger': !success
+  }"
+>
+  A simple success alert—check it out!
+</div>
+
+<div
+  class="alert mb-3"
+  role="alert"
+  [ngClass]="success ? 'alert-warning' : 'alert-info'"
+>
+  A simple warning alert—check it out!
+</div>
+
+<div [class]="'mb-3'">
+  <button
+    type="button"
+    class="btn me-2"
+    [ngClass]="success ? 'btn-primary' : 'btn-outline-primary'"
+  >
+    Primary
+  </button>
+  <button
+    type="button"
+    class="btn me-2"
+    [ngClass]="success ? 'btn-secondary' : 'btn-outline-secondary'"
+  >
+    Secondary
+  </button>
+  <button
+    type="button"
+    class="btn me-2"
+    [ngClass]="success ? 'btn-success' : 'btn-outline-success'"
+  >
+    Success
+  </button>
+  <button
+    type="button"
+    class="btn me-2"
+    [ngClass]="success ? 'btn-danger' : 'btn-outline-danger'"
+  >
+    Danger
+  </button>
+  <button
+    type="button"
+    class="btn me-2"
+    [ngClass]="success ? 'btn-warning' : 'btn-outline-warning'"
+  >
+    Warning
+  </button>
+  <button
+    type="button"
+    class="btn me-2"
+    [ngClass]="success ? 'btn-info' : 'btn-outline-info'"
+  >
+    Info
+  </button>
+  <button
+    type="button"
+    class="btn me-2"
+    [ngClass]="success ? 'btn-light' : 'btn-outline-light'"
+  >
+    Light
+  </button>
+  <button
+    type="button"
+    class="btn me-2"
+    [ngClass]="success ? 'btn-dark' : 'btn-outline-dark'"
+  >
+    Dark
+  </button>
+</div>
+
+<h1 [ngStyle]="{ 'margin-bottom': '3px' }">NG Style</h1>
+<some-element [ngStyle]="{ 'font-size': '50' }">
+  <a
+    href="https://angular.io/api/common/NgStyle"
+    target="_blank"
+    rel="noopener noreferrer"
+    >ngStyle</a
+  >
+  <a
+    href="https://angular.io/api/common/NgClass"
+    target="_blank"
+    rel="noopener noreferrer"
+    >ngClass</a
+  >
+</some-element>

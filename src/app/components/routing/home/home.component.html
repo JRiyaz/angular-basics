@@ -1,1 +1,59 @@
-<p>home works!</p>
+<h1>Home page - Ng Directives</h1>
+
+<!-- If else start -->
+<div *ngIf="show; then thenBlock; else elseBlock"></div>
+<ng-template #thenBlock
+  >Content to render when condition is
+  <strong [ngStyle]="{ 'background-color': 'red' }">true</strong>.</ng-template
+>
+<ng-template #elseBlock
+  >Content to render when condition is <strong>false</strong>.</ng-template
+>
+<!-- If else ends -->
+
+<h4 class="my-3">If Directive</h4>
+<button class="btn btn-info my-3" (click)="handleButtonClick()">
+  {{ text | titlecase }} Users
+</button>
+
+<div *ngIf="show">
+  <h3 class="my-3">Users List</h3>
+
+  <ul class="list-group">
+    <ng-container *ngFor="let user of users?.reverse(); index as i">
+      <ng-template [ngIf]="i > 3">
+        <li class="list-group-item">{{ user.name }}</li>
+      </ng-template>
+    </ng-container>
+  </ul>
+</div>
+
+<br />
+<br />
+<div class="d-flex">
+  <h4 class="col-3">Switch Directive</h4>
+  <div class="col-6">
+    <span class="me-1">success, </span>
+    <span class="me-1">primary, </span>
+    <span class="me-1">danger, </span>
+    <span class="me-1">warning</span>
+  </div>
+  <div class="col-3">
+    <input type="text" class="form-controle" [(ngModel)]="alert" />
+  </div>
+</div>
+<container-element [ngSwitch]="alert">
+  <div *ngSwitchCase="'primary'" class="alert alert-primary" role="alert">
+    A simple primary alert—check it out!
+  </div>
+  <div *ngSwitchCase="'danger'" class="alert alert-danger" role="alert">
+    A simple success alert—check it out!
+  </div>
+  <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">
+    A simple danger alert—check it out!
+  </div>
+  <div *ngSwitchDefault class="alert alert-success" role="alert">
+    A simple warning alert—check it out!
+    <strong class="ps-3">This is default one</strong>
+  </div>
+</container-element>
