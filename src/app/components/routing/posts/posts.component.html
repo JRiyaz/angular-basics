@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-4">
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        routerLinkActive="active"
+        *ngFor="let user of users; let i = index"
+      >
+        <a
+          [routerLink]="['./']"
+          [queryParams]="{ userId: user.id }"
+          queryParamsHandling="merge"
+          >{{ user.name }}</a
+        >
+      </li>
+    </ul>
+
+    <div class="my-2">
+      <button
+        type="button"
+        class="btn btn-outline-primary me-1"
+        (click)="handleCreatePost()"
+      >
+        Create Post
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-success me-1"
+        (click)="handleUpdatePost()"
+      >
+        Update Post
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-danger"
+        (click)="handleDeletePost()"
+      >
+        Delete Post
+      </button>
+    </div>
+  </div>
+  <div class="col-8 px-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>

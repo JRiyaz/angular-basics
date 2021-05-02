@@ -1,16 +1,24 @@
 <footer class="text-muted py-5">
   <div class="container">
-    <p class="float-end mb-1">
-      <a href="#">Back to top</a>
-    </p>
-    <p class="mb-1">
-      Album example is &copy; Bootstrap, but please download and customize it
-      for yourself!
-    </p>
-    <p class="mb-0">
-      New to Bootstrap? <a href="/">Visit the homepage</a> or read our
-      <a href="/docs/5.0/getting-started/introduction/">getting started guide</a
-      >.
-    </p>
+    <div class="d-flex my-1 justify-content-between">
+      <h5 class="col-6 my-auto">{{ admin }}</h5>
+
+      <div class="d-flex col-6">
+        <input
+          class="form-control"
+          type="text"
+          id="user"
+          #user
+          placeholder="change User by BehaviorSubject"
+        />
+        <button
+          class="btn btn-success mx-2"
+          (click)="handleChangeUser(user.value)"
+        >
+          change Admin
+        </button>
+      </div>
+    </div>
+    <p class="mb-0 mt-3 text-center">This is footer</p>
   </div>
 </footer>

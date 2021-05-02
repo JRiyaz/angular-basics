@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,8 @@ import { UserComponent } from './components/routing/user/user.component';
 import { UsersService } from './services/users/users.service';
 import { UsersResolveGuard } from './guards/usersResolve/users-resolve.guard';
 import { ContactComponent } from './components/routing/contact/contact.component';
+import { PostsComponent } from './components/routing/posts/posts.component';
+import { PostComponent } from './components/routing/post/post.component';
 
 @NgModule({
   declarations: [
@@ -43,12 +46,15 @@ import { ContactComponent } from './components/routing/contact/contact.component
     UsersComponent,
     FooterComponent,
     UserComponent,
-    ContactComponent
+    ContactComponent,
+    PostsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [UsersService, UsersResolveGuard],
   bootstrap: [AppComponent]

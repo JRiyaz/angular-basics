@@ -1,8 +1,35 @@
-<div class="card" style="width: 18rem">
+<div class="card">
   <div class="card-body">
-    <h5 class="card-title">{{ userDetails.id }}</h5>
     <h5 class="card-title">{{ userDetails.name }}</h5>
-    <h6 class="card-subtitle mb-2 lead">{{ userDetails.email }}</h6>
-    <h6 class="card-subtitle mb-2 text-muted">{{ userDetails.gender }}</h6>
+    <table class="table">
+      <tr>
+        <th>Id</th>
+        <td>{{ userDetails.id }}</td>
+      </tr>
+      <tr>
+        <th>Name</th>
+        <td>{{ userDetails.name }}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{ userDetails.email }}</td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td>{{ userDetails.gender }}</td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td>
+          {{ userDetails.address | json }}
+        </td>
+      </tr>
+    </table>
+    <a
+      [routerLink]="['/posts']"
+      [queryParams]="{ userId: userDetails.id }"
+      class="card-link"
+      >view posts</a
+    >
   </div>
 </div>
