@@ -30,16 +30,21 @@
 
 <br />
 <br />
-<div class="d-flex">
+<div class="d-flex mb-3">
   <h4 class="col-3">Switch Directive</h4>
   <div class="col-6">
-    <span class="me-1">success, </span>
-    <span class="me-1">primary, </span>
+    <span class="me-1">" primary, </span>
+    <span class="me-1">warning, </span>
     <span class="me-1">danger, </span>
-    <span class="me-1">warning</span>
+    <span class="me-1">dark "</span>
   </div>
   <div class="col-3">
-    <input type="text" class="form-controle" [(ngModel)]="alert" />
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="alert"
+      placeholder="Enter alert name"
+    />
   </div>
 </div>
 <container-element [ngSwitch]="alert">
@@ -50,6 +55,9 @@
     A simple success alert—check it out!
   </div>
   <div *ngSwitchCase="'warning'" class="alert alert-warning" role="alert">
+    A simple danger alert—check it out!
+  </div>
+  <div *ngSwitchCase="'dark'" class="alert alert-dark" role="alert">
     A simple danger alert—check it out!
   </div>
   <div *ngSwitchDefault class="alert alert-success" role="alert">

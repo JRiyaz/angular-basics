@@ -25,10 +25,7 @@ export class HomeComponent implements OnInit {
 
   handleButtonClick(): void {
     this.show = !this.show;
-    if (this.show)
-      this.text = 'hide';
-    else
-      this.text = 'show';
+    this.text = this.show ? 'hide' : 'show';
   }
 
 }

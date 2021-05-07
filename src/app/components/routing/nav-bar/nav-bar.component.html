@@ -33,14 +33,40 @@
             >Contact</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!showLinks">
           <a class="nav-link" routerLink="users" routerLinkActive="active"
             >Users</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="!showLinks">
           <a class="nav-link" routerLink="posts" routerLinkActive="active"
             >Posts</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="temp-form" routerLinkActive="active"
+            >T Forms</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="reactive-form"
+            routerLinkActive="active"
+            >R Forms</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="multi-step-form"
+            routerLinkActive="active"
+            >MS Form</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="basic-auth" routerLinkActive="active"
+            >Auth</a
           >
         </li>
       </ul>
@@ -55,4 +81,27 @@
       </form>
     </div>
   </div>
+
+  <!-- ======= Toast Section ======= -->
+  <div
+    class="toast align-items-center text-white bg-primary border-2 text-white border-white position-absolute"
+    [ngStyle]="{ opacity: 1 }"
+    [ngClass]="alert ? border : 'd-none'"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+    id="toast"
+  >
+    <div class="d-flex">
+      <div class="toast-body">{{ message }}</div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        data-bs-dismiss="toast"
+        aria-label="Close"
+        (click)="handleCloseAlert()"
+      ></button>
+    </div>
+  </div>
+  <!-- End Toast -->
 </nav>

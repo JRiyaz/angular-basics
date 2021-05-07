@@ -1,0 +1,180 @@
+<h1 class="mb-3">Template Driven Forms!</h1>
+
+<div class="d-flex">
+  <form
+    #templateForm="ngForm"
+    (ngSubmit)="handleformSubmit(templateForm)"
+    class="col-8"
+  >
+    <div class="mb-3">
+      <div class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="email-id"
+          name="email"
+          placeholder="name@example.com"
+          required
+          minlength="6"
+          maxlength="20"
+          autofocus
+          #email="ngModel"
+          ngModel
+        />
+        <label for="email-id">Email address</label>
+      </div>
+      <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+        <p *ngIf="email.errors.required">Email field is required</p>
+        <p *ngIf="email.errors.minlength">
+          Email must have at-least 6 characters
+        </p>
+        <p *ngIf="email.errors.required">Email must not exceed 20 characters</p>
+        <p *ngIf="email.errors.pattern">Invalid Email</p>
+      </div>
+    </div>
+    <div class="form-floating mb-3">
+      <select
+        class="form-select"
+        id="floatingSelect"
+        aria-label="Floating label select example"
+        name="language"
+        ngModel
+      >
+        <option
+          *ngFor="let language of languages"
+          [selected]="language === 'English'"
+          [value]="language"
+        >
+          {{ language }}
+        </option>
+      </select>
+      <label for="floatingSelect">Works with selects</label>
+    </div>
+
+    <div class="form-group mb-3">
+      <div class="form-check form-check-inline" *ngFor="let gender of genders">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          [value]="gender"
+          [checked]="gender == 'Male'"
+          id="{{ gender }}"
+          ngModel
+        />
+        <label class="form-check-label" for="{{ gender }}">{{ gender }}</label>
+      </div>
+    </div>
+
+    <div class="row" ngModelGroup="address">
+      <div class="col-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            placeholder="city"
+            name="city"
+            ngModel
+          />
+          <label for="city">City</label>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="street"
+            placeholder="street"
+            name="street"
+            ngModel
+          />
+          <label for="street">Street</label>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="zipcode"
+            placeholder="zipcode"
+            name="zipcode"
+            ngModel
+          />
+          <label for="zipcode">Zipcode</label>
+        </div>
+      </div>
+      <div class="row col-12 my-2" ngModelGroup="geo">
+        <div class="col-6">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="longitude"
+              placeholder="longitude"
+              name="longitude"
+              ngModel
+            />
+            <label for="longitude">Longitude</label>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="latitude"
+              placeholder="latitude"
+              name="latitude"
+              ngModel
+            />
+            <label for="latitude">Latitude</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-3">
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="agreement"
+          id="agreement"
+          [checked]="agreement"
+          ngModel
+        />
+        <label class="form-check-label" for="agreement"
+          >Agree to terms & conditions</label
+        >
+      </div>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea
+        class="form-control"
+        placeholder="Leave a comment here"
+        id="floatingTextarea2"
+        style="height: 100px"
+        name="comment"
+        ngModel
+      >
+      </textarea>
+      <label for="floatingTextarea2">Comments</label>
+    </div>
+
+    <!-- Submit button -->
+    <button
+      type="submit"
+      class="btn btn-primary w-100 btn-block"
+      [disabled]="templateForm.invalid"
+    >
+      submit
+    </button>
+    <!--  -->
+  </form>
+  <div class="col-4 px-4">
+    <pre>{{ templateForm.value | json }}</pre>
+  </div>
+</div>

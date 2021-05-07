@@ -35,6 +35,10 @@ export class UsersService {
     return this.users.find(user => user.id == userId).name;
   }
 
+  emailExists(email: string): boolean {
+    return !!this.users.find(users => users.email === email);
+  }
+
   public getAdmin(): string {
     return this._admin;
   }
